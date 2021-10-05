@@ -1,0 +1,29 @@
+:root {
+  --color-primary: #085DCB;
+  --color-second: #C38D9E;
+  --color-additionary: #E27D60;
+}
+
+.mainPhrase {
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+  border: 2px solid black;
+  color: var(--color-primary);
+}
+
+.headerContacts {
+  color: var(--color-primary);
+  border: 0px solid black;
+  float: left;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.favoriteQuote {
+  color: var(--color-second)
+}
+
+ul {
+  color: var(--color-additionary)
+}
