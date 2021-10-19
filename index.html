@@ -1,24 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="ru">
 <head>
-<title>Лихачев Игорь - М33051</title>
-<meta charset="utf-8">
-<meta name="keywords" content="Игорь, Лихачев, портфолио, краткая, информация">
-<meta name="description" content="Сайт создан для демонстрации web">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Лихачев Игорь - М33051</title>
+  <meta charset="utf-8">
+  <meta name="keywords" content="Игорь, Лихачев, портфолио, краткая, информация">
+  <meta name="description" content="Сайт создан для демонстрации web">
+  <style>
+			body {
+				background-color: #8c8c79;
+			}
+	</style>
 </head>
- <body>
+<body>
    <header>
-     <nav>
+     <h2 class="mainPhrase">Привет, меня зовут Лихачев Игорь Олегович и я учусь в группе М33051</h2>
+     <nav class="headerContacts">
        Контакты:
        <ul>
          <li><a href="https://github.com/TIove" target="_blank">GitHub</a></li>
+         <li><a href="https://vk.com/tiove" target="_blank">VK</a></li>
        </ul>
      </nav>
-     <h3>Приветствую, меня зовут Лихачев Игорь Олегович и я учусь в группе М33051</h3>
    </header>
    <main>
-     <section>
-       <article>
+     <section class="aboutMe">
+       <img width="200" height="270" src="/Users/tiove/Desktop/Web/Tiove.github.io/resources/mainPhoto.png" class="mainPhoto" />
+       <article class="favoriteQuote">
          <h3>Любимая цитата:</h3>
          <h4>
            <p>
@@ -26,84 +34,84 @@
            </p>
          </h4>
        </article>
-       <article>
+       <article class="advantages">
          <h3>Успехи:</h3>
          <h4>
            <ul>
-             <li>Учился почти на 4</li>
-             <li>Не отчислился</li>
+             <li><span>Учился почти на 4</span></li>
+             <li><span>Не отчислился</span></li>
            </ul>
          </h4>
        </article>
-       <article>
+       <article class="disadvantages">
          <h3>Анти-успехи:</h3>
          <h4>
            <ol>
-             <li>Не работаю в Яндексе</li>
-             <li>Не открыл стартап</li>
-             <li>Мало путешествовую</li>
+             <li><span>Не работаю в Яндексе</span></li>
+             <li><span>Не открыл стартап</span></li>
+             <li><span>Мало путешествовую</span></li>
            </ol>
          </h4>
        </article>
      </section>
-     <section>
-       <article>
+     <section class="hardSkills">
+       <article class="techStack">
          <h3>Мой стек:</h3>
          <dl>
            <dt>Навыки:</dt>
            <dd>
-             <li>EntityFrameworkCore</li>
-             <li>Unit Testing</li>
-             <li>SQL</li>
-             <li>ООП</li>
+             <li><span>EntityFrameworkCore</span></li>
+             <li><span>Unit Testing</span></li>
+             <li><span>SQL</span></li>
+             <li><span>ООП</span></li>
            </dd>
            <dt>Языки:</dt>
            <dd>
-             <li>C#</li>
-             <li>Go</li>
-             <li>T-SQL</li>
+             <li><span>C#</span></li>
+             <li><span>Go</span></li>
+             <li><span>T-SQL</span></li>
            </dd>
          </dl>
        </article>
      </section>
-     <section>
+     <section class="codeSamples">
        <h3>Пример кода (Не вызывает гордости, просто пусть лежит здесь)</h3>
        <pre>
-         <code>
+         <code class="javaCode">
         public void actionPerformed(AnActionEvent event) {
-        final Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
-        final Project project = event.getRequiredData(CommonDataKeys.PROJECT);
-        final Document document = editor.getDocument();
+          final Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+          final Project project = event.getRequiredData(CommonDataKeys.PROJECT);
+          final Document document = editor.getDocument();
 
-        Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
-        int start = primaryCaret.getSelectionStart();
-        int end = primaryCaret.getSelectionEnd();
+          Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
+          int start = primaryCaret.getSelectionStart();
+          int end = primaryCaret.getSelectionEnd();
 
-        String selectedText = editor.getSelectionModel().getSelectedText();
+          String selectedText = editor.getSelectionModel().getSelectedText();
 
-        if (selectedText == null) {
-            Messages.showMessageDialog(
-                    "Selection is empty, could you please select something?",
-                    "SQL Action",
-                    Messages.getInformationIcon());
-            return;
+          if (selectedText == null) {
+              Messages.showMessageDialog(
+                      "Selection is empty, could you please select something?",
+                      "SQL Action",
+                      Messages.getInformationIcon());
+              return;
+          }
+
+          try {
+              String newString = formatSQLRemote(selectedText);
+              WriteCommandAction.runWriteCommandAction(project, () -> document.replaceString(start, end, newString));
+          } catch (Exception e) {
+              return;
+          }
+
+          primaryCaret.removeSelection();
         }
-
-        try {
-            String newString = formatSQLRemote(selectedText);
-            WriteCommandAction.runWriteCommandAction(project, () -> document.replaceString(start, end, newString));
-        } catch (Exception e) {
-            return;
-        }
-
-        primaryCaret.removeSelection();
-    }
-    </code>
-  </pre>
-     </section>
-     <aside>
+        </code>
+      </pre>
+    </section>
+    <aside>
        <h3>Красивая картинка, оставлю ее здесь<h3>
-       <pre>
+       <pre id=plane>
          ░░░░░░░░▄███▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░
          ░░░░░░░░█░░░▀▀█▄░░░░░░░░░░░░░░░░░░░░░░░░
          ░░░░░░░░█▄░░░░░▀█▄░░░░░░░░░░░░░░░░░░░░░░
@@ -128,7 +136,7 @@
      </aside>
    </main>
    <footer>
-     <article>
+     <article class="formula">
        <h3>Формула успеха:</h3>
        <p>Успех = Упорство<sup>2</sup> + H<sub>2</sub>O</p>
      </article>
@@ -138,5 +146,5 @@
        </q>
      </p>
    </footer>
- </body>
+</body>
 </html>
