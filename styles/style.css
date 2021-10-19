@@ -1,7 +1,11 @@
 :root {
-  --color-primary: #085DCB;
-  --color-second: #C38D9E;
-  --color-additionary: #E27D60;
+  --color-primary: #00008b;
+  --color-second: #004d00;
+  --color-additionary: #80461B;
+}
+
+.mainPhoto {
+  box-shadow: 5px 5px #505050;
 }
 
 .mainPhrase {
@@ -16,14 +20,44 @@
   color: var(--color-primary);
   border: 0px solid black;
   float: left;
-  margin-right: 5%;
+  margin-right: 100%;
   text-align: center;
 }
 
+.mainPhoto {
+  margin-right: 5%;
+  float: left;
+}
+
 .favoriteQuote {
+  margin-left: 0%;
   color: var(--color-second)
 }
 
-ul {
+h3 {
   color: var(--color-additionary)
+}
+
+#plane {
+  color: black
+}
+
+ul, ol, dd {
+  color: var(--color-second)
+}
+
+li span {
+  color: var(--color-primary)
+}
+
+.formula {
+  color: var(--color-primary)
+}
+
+.codeSamples {
+  border: 2px solid black;
+}
+
+.javaCode {
+  color: black
 }
